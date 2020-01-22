@@ -92,10 +92,10 @@ server.put('/:id', validateId, validateAccount, (req, res) => {
 
         })
 })
-// erase record
+// erase record(works)
 server.delete('/:id', validateId, (req, res) => {
     console.log(req.params.id)
-    db('account')
+    db('accounts')
         .where({id: req.params.id}) // always filter on update and delete
         .del()
         .then(count => {
